@@ -1,0 +1,25 @@
+<!--
+  Generated template for the SpbioPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+      <ion-title>{{p['mname']}}</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    <img src="{{imgurl+p['mpic']}}"  class="img-responsive no-padding" />
+    <ion-item-divider></ion-item-divider>
+    <ion-card padding>
+      
+      <p>{{p['mbio']}}</p>
+    </ion-card>
+  </ion-content>
+  
+  <ion-footer>
+    <button ion-button block color="dark" (click)="cmodal()"><ion-icon name="close" class="btn-close" ></ion-icon></button>
+  </ion-footer>
+  

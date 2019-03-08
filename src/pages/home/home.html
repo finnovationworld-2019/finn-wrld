@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Welcome to Finnovation</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    
+     <img src="assets/imgs/finlogo.jpg" class="logoh" />
+  
+    
+<ion-list class="bdr bg-content">
+  
+   
+  <ion-item>
+    <ion-label floating ><ion-icon name="contact" item-start></ion-icon>Email</ion-label>
+    <ion-input type="email" [(ngModel)]="username" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label floating><ion-icon name="unlock" item-start></ion-icon>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="password" ></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <button ion-button color="primary" round block (click)="login()" class="login-button">Login</button>
+  </ion-item>
+
+  <ion-item>
+    <ion-grid>
+          <ion-row>
+            <ion-col>
+              <button clear ion-button (click)="signup()">Sign-Up</button>
+            </ion-col> 
+            <ion-col>
+                <button clear ion-button (click)="forgot()">Forgot Password?</button>
+              </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    
+  </ion-list>
+
+  
+</ion-content>

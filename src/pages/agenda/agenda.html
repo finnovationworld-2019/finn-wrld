@@ -1,0 +1,118 @@
+<!--
+  Generated template for the SpbioPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-navbar>
+      <ion-title>{{a['astart']}} to {{a['aend']}} </ion-title>
+      <button ion-button item-end color="dark" (click)="cmodal()">
+        <ion-icon name="close" class="btn-close" ></ion-icon></button>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    
+    
+    <ion-list>
+        <ion-list-header color="dark">{{a['atopic']}}</ion-list-header>
+        <ion-card padding *ngIf="a['subtopic'] != ''">
+          <p>{{a['asubtopic']}}</p>
+        </ion-card>
+        <ion-card padding *ngIf="a['subtopic'] == ''">
+            <p>No Data</p>
+          </ion-card>
+
+          <ion-card *ngIf="a['director'] != '0'">
+              <ion-list>
+                <ion-item>
+                    <ion-avatar item-start>
+                        <img src="{{imgurl+a['director_info']['photo']}}">
+                    </ion-avatar>
+                    <h2>{{a['director_info']['spkname']}}</h2>
+                    <h3>DIRECTOR</h3>
+                </ion-item>
+              </ion-list>
+              <ion-item-divider>
+                  <p >{{a['director_info']['desg']}}</p>
+                  <hr>
+                  <p>{{a['director_info']['company']}}</p>
+              </ion-item-divider>
+                
+               <p padding>{{a['director_info']['about']}}</p>
+                
+            </ion-card>
+
+        <ion-card *ngIf="a['moderator'] != '0'" >
+          <ion-list>
+            <ion-item>
+                <ion-avatar item-start>
+                    <img src="{{imgurl+a['moderator_info']['photo']}}">
+                </ion-avatar>
+                <h2>{{a['moderator_info']['spkname']}}</h2>
+                <h3>MODERATOR</h3>
+            </ion-item>
+          </ion-list>
+          <ion-item-divider>
+              <p >{{a['moderator_info']['desg']}}</p>
+              <hr>
+              <p>{{a['moderator_info']['company']}}</p>
+          </ion-item-divider>
+            
+           <p padding>{{a['moderator_info']['about']}}</p>
+            
+        </ion-card>
+
+        <ion-card *ngIf="a['hotseat'] != '0'" >
+            <ion-list>
+              <ion-item>
+                  <ion-avatar item-start>
+                      <img src="{{imgurl+a['hotseat_info']['photo']}}">
+                  </ion-avatar>
+                  <h2>{{a['hotseat_info']['spkname']}}</h2>
+                  <h3>HOTSEAT</h3>
+              </ion-item>
+            </ion-list>
+            <ion-item-divider>
+                <p >{{a['hotseat_info']['desg']}}</p>
+                <hr>
+                <p>{{a['hotseat_info']['company']}}</p>
+            </ion-item-divider>
+              
+             <p padding>{{a['hotseat_info']['about']}}</p>
+              
+          </ion-card>
+
+        </ion-list>
+
+        
+          <h4 *ngIf="a['agenda_spk'].length != 0">Speakers</h4>
+          <ion-card *ngFor="let asp of a['agenda_spk']">
+            <ion-list>
+               <ion-item>
+                <ion-avatar item-start>
+                    <img src="{{imgurl+asp['photo']}}">
+                </ion-avatar>
+                <h2>{{asp['spkname']}}</h2>
+                <h3>{{asp['spkcatname']}}</h3>
+              </ion-item>
+            </ion-list>
+            <hr>  
+              <ion-item-divider>
+                  
+                  <p>{{asp['desg']}}</p>
+                  <p>{{asp['company']}}</p>
+              </ion-item-divider>
+              <hr>
+
+              <p padding>{{asp['about']}}</p>
+          </ion-card>
+          
+       
+
+        
+  </ion-content>
+  
+
+  

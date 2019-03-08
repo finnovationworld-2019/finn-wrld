@@ -1,0 +1,44 @@
+<!--
+  Generated template for the DashboardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+     
+    <button ion-button menuToggle start>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    
+    <ion-title>Finnovation Events</ion-title>
+  <ion-buttons end>
+      <button (click)="gochat()" item-end ion-button small round>
+      <ion-icon name="chatboxes"></ion-icon> <ion-badge *ngIf="mychats > 0" color="danger">{{mychats}}</ion-badge>
+    </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<ion-list *ngIf="data['events']">
+  <ion-list-header color="primary">Upcoming Events</ion-list-header>
+  <ion-item  *ngFor="let ev of data['events']; let i=index">
+      <ion-card  >
+        <img src="{{imgurl+ev.epic}}" >
+            
+                <h1 class="evh" [ngClass]="getcolor(i)">{{ev.ename}}</h1>
+                <ion-item [ngClass]="getcolor(i)">
+                <p><ion-icon name="navigate"></ion-icon> {{ev.evenue}},</p>
+                <p class="ccc"> {{ev.estate}}, {{ev.ecountry}}</p>
+                </ion-item>
+              <ion-item [ngClass]="getcolor(i)">
+                <ion-icon name="calendar"></ion-icon> {{ev.eventdate}}
+              </ion-item>
+            <ion-item [ngClass]="getcolor(i)">
+            <button ion-button color="primary" (click)="viewevent(ev)" round padding>View More</button>
+            </ion-item>  
+      </ion-card>
+    </ion-item>
+</ion-list>
+</ion-content>

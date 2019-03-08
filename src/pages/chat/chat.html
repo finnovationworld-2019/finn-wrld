@@ -1,0 +1,35 @@
+<!--
+  Generated template for the ChatPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+   
+  <ion-navbar color="dark">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Chats</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-list *ngIf="myusers['success']">
+      <ion-list-header>My Chats</ion-list-header>
+    <ion-item *ngFor="let u of myusers['userinfo']" (click)="dochat(u.userid,u.name)">
+    <ion-avatar item-start *ngIf="u!=null"><ion-icon name="contact"></ion-icon></ion-avatar>
+    <h4 *ngIf="u!=null">{{u.name}}</h4>
+    <p *ngIf="u!=null">{{u.company+", "+u.desg}}</p>
+    </ion-item>
+    </ion-list>
+
+<ion-list *ngIf="users['success']">
+  <ion-list-header>Users</ion-list-header>
+<ion-item *ngFor="let uu of users['userinfo']" (click)="dochat(uu.userid,uu.name)">
+<ion-avatar item-start *ngIf="uu!=null"><ion-icon name="contact"></ion-icon></ion-avatar>
+<h4 *ngIf="uu!=null">{{uu.name}}</h4>
+<p *ngIf="uu!=null">{{uu.company+", "+uu.desg}}</p>
+</ion-item>
+</ion-list>
+
+</ion-content>

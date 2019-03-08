@@ -1,0 +1,39 @@
+<!--
+  Generated template for the DochatPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>Chat with {{name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+<ion-list>
+  <ion-item>
+    <ion-row>
+      <ion-col col-10>
+        <textarea [(ngModel)]="msg" class="pl" placeholder="Type message"></textarea>
+      </ion-col>
+      <ion-col col-2>
+        <button ion-button block clear round (click)="sendchat()"><ion-icon class="si" name="arrow-dropright-circle"></ion-icon></button>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+</ion-list>
+<ion-list class="chat-list" *ngIf="chats['success']">
+<ion-item *ngFor="let c of chats['msgs']" [ngClass]="getcoloritem(c['senid'])">
+    <h3 *ngIf="userid==c['senid']" [ngClass]="getcolorb(c['senid'])">Me</h3>
+    <h3 *ngIf="userid!=c['senid']" [ngClass]="getcolorb(c['senid'])">{{c['sender']}}</h3>
+<p [ngClass]="getcolor(c['senid'])" >
+   
+  {{c['ctext']}}
+</p>
+<ion-item-divider class="text-sm" [ngClass]="getcolorb(c['senid'])">{{c['date']}}</ion-item-divider>
+</ion-item>
+
+  </ion-list>
+</ion-content>

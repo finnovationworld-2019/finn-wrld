@@ -1,0 +1,25 @@
+<!--
+  Generated template for the FeedbackPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar color="primary">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Give your Feedback</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+<ion-list>
+  <ion-item>
+    <ion-label floating>Type a Message</ion-label>
+    <ion-input type="text" #msgInput rows="8" maxLength="500"  [(ngModel)]="message"></ion-input>
+   </ion-item>
+  <ion-item>
+    <button ion-button round color="primary" class="login-button" block (click)="submit()">Give Feedback </button>
+  </ion-item>
+</ion-list>
+</ion-content>

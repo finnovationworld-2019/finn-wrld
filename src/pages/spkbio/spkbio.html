@@ -1,0 +1,34 @@
+
+<ion-header>
+    <ion-navbar>
+      <ion-title>{{spk['spkname']}}</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+    
+      <ion-card >
+          <ion-list>
+             <ion-item>
+            
+                  <img src="{{imgurl+spk['photo']}}">
+            <ion-item-divider></ion-item-divider>
+              <h2>{{spk['spkname']}}</h2>
+              <h3>{{spk['spkcatname']}}</h3>
+            </ion-item>
+          </ion-list>
+          <hr>  
+            <ion-item-divider>
+                
+                <p>{{spk['desg']}}</p>
+                <p>{{spk['company']}}</p>
+            </ion-item-divider>
+            <ion-item-divider></ion-item-divider>
+            <p>{{spk['about']}}</p>
+            </ion-card>
+  </ion-content>
+  
+  <ion-footer>
+    <button ion-button block color="dark" (click)="cmodal()"><ion-icon name="close" class="btn-close" ></ion-icon></button>
+  </ion-footer>
+  
