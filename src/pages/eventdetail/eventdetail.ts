@@ -8,6 +8,8 @@ import { AgendaPage } from '../../pages/agenda/agenda';
 import { ChatPage } from '../../pages/chat/chat';
 import { SpkbioPage } from '../../pages/spkbio/spkbio';
 import { ImapPage } from '../imap/imap';
+import { DashboardPage } from '../dashboard/dashboard';
+
 
 @Component({
   selector: 'page-eventdetail',
@@ -26,7 +28,9 @@ sspeaker :boolean =false;
 ssponsor :boolean=false;
 spartner :boolean=false;
 files: boolean = false;
-
+tab1Root: any = DashboardPage;
+  tab2Root: any = ImapPage;
+  myIndex: number;
 event: object = {
   eventid: '',
   ename: '',
@@ -87,7 +91,8 @@ int2: any;
   this.baseurl = this.dp.getbaseUrl();
   this.imgurl = this.dp.getimgUrl();
   this.event = this.navParams.get("currevent");
-
+// Set the active tab based on the passed index from menu.ts
+this.myIndex = navParams.data.tabIndex || 0;
 this.requestflag();
 this.pendingflag();
 this.detailsflag();

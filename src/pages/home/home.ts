@@ -17,7 +17,9 @@ password: string = '';
 baseurl: string = '';
 data: any =  {
   success: ''
-};
+}
+tab1Root: any = DashboardPage;
+tab2Root: any = DashboardPage;
   constructor(public navCtrl: NavController, public dp: DataProvider, public actionsheetCtrl: ActionSheetController, public http:Http, public loadingCtrl: LoadingController) {
 this.baseurl = dp.getbaseUrl();
   }
